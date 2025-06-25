@@ -4,9 +4,10 @@ from nicegui.events import ValueChangeEventArguments
 b = True
 
 def show(event: ValueChangeEventArguments):
+    global b
     name = type(event.sender).__name__
     ui.notify(f'{name}: {event.value}')
-    b != b
+    b = not b
     
 
 ui.button('Button', on_click=lambda: ui.notify('Click'))
